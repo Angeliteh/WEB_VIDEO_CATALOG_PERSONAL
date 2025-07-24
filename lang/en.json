@@ -1,0 +1,174 @@
+{
+  "site": {
+    "title": "MediaVault Pro",
+    "name": "MediaVault Pro",
+    "tagline": "Personal Media Collection",
+    "description": "Your personal video and media library organized beautifully"
+  },
+  "navigation": {
+    "videos": "Portfolio",
+    "about": "About Me",
+    "contact": "Work With Me"
+  },
+  "hero": {
+    "welcome": "Welcome to My Personal Media Collection",
+    "subtitle": "Showcasing my creative work and memorable moments",
+    "cta": "Browse Gallery"
+  },
+  "catalog": {
+    "title": "My Video Portfolio",
+    "categories": "Categories:",
+    "all": "All Projects",
+    "drone": "Aerial Shots",
+    "nature": "Nature",
+    "actions": "Action",
+    "featured": "Featured Work",
+    "lifestyle": "Lifestyle",
+    "travel": "Travel",
+    "technology": "Tech Projects"
+  },
+  "videos": {
+    "cinematic_landscapes": {
+      "title": "Mountain Escape",
+      "description": "A personal project capturing the serene beauty of my weekend hiking trip to the Rocky Mountains. Shot with my drone during golden hour, this piece represents my love for nature photography and cinematography."
+    },
+    "urban_timelapse": {
+      "title": "City Life Chronicles",
+      "description": "My ongoing documentation of urban life in downtown. This timelapse compilation shows 6 months of capturing the same intersection at different times, revealing the rhythm of city life."
+    },
+    "ocean_waves": {
+      "title": "Coastal Memories",
+      "description": "Summer vacation footage from my trip to the Pacific Coast. These intimate moments with the ocean waves remind me why I fell in love with videography - capturing fleeting beauty."
+    },
+    "mountain_adventure": {
+      "title": "Alpine Adventure",
+      "description": "Behind-the-scenes of my mountain climbing expedition. This personal documentary showcases not just the stunning landscapes, but the journey and challenges of outdoor photography."
+    },
+    "forest_wildlife": {
+      "title": "Backyard Wildlife",
+      "description": "A year-long project documenting the wildlife in my local forest preserve. Patient observation and respect for nature resulted in these intimate wildlife encounters."
+    },
+    "sunset_magic": {
+      "title": "Golden Hour Collection",
+      "description": "My favorite sunset captures from various locations around the world. Each sunset tells a different story - from solo travels to family moments, all preserved in cinematic quality."
+    },
+    "tech_innovation": {
+      "title": "Creative Process",
+      "description": "A behind-the-scenes look at my creative workflow, from planning shoots to post-production. This meta-project shows how I organize and manage my growing video library."
+    },
+    "cultural_heritage": {
+      "title": "Family Heritage",
+      "description": "Documenting my grandmother's stories and our family traditions. This ongoing project preserves precious memories and cultural heritage for future generations."
+    },
+    "extreme_sports": {
+      "title": "Weekend Warriors",
+      "description": "Action footage from my friends' extreme sports adventures. From skateboarding to rock climbing, these videos capture the adrenaline and friendship of our weekend escapades."
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Visual Storyteller & Content Creator",
+    "description": "Hi! I'm Alex, a passionate videographer and photographer based in Colorado. For the past 8 years, I've been capturing stories through my lens - from intimate wedding moments to breathtaking landscapes, corporate events to personal adventures.",
+    "mission": "My journey started with a simple camera and a love for adventure. Today, I specialize in creating cinematic content that tells authentic stories. Whether it's documenting your special day, creating promotional content for your business, or collaborating on creative projects, I bring passion and professionalism to every shoot.",
+    "experience": "I've had the privilege of working with amazing clients across various industries - from local businesses to destination weddings, music videos to documentary projects. Each project teaches me something new and fuels my creativity.",
+    "approach": "My approach is simple: listen, understand, and create. I believe the best content comes from genuine connections and understanding what makes each story unique.",
+    "services": {
+      "weddings": {
+        "title": "Wedding Videography",
+        "description": "Cinematic wedding films that capture the emotion and beauty of your special day. From intimate ceremonies to grand celebrations."
+      },
+      "corporate": {
+        "title": "Corporate Content",
+        "description": "Professional promotional videos, event coverage, and brand storytelling that elevates your business presence."
+      },
+      "events": {
+        "title": "Event Documentation",
+        "description": "Comprehensive coverage of conferences, parties, and special events with a focus on capturing authentic moments."
+      },
+      "creative": {
+        "title": "Creative Collaborations",
+        "description": "Music videos, short films, and artistic projects. Always open to collaborating with fellow creatives on unique concepts."
+      },
+      "personal": {
+        "title": "Personal Projects",
+        "description": "Family documentaries, travel films, and personal milestone celebrations. Preserving your precious memories with artistic flair."
+      },
+      "equipment": {
+        "title": "Professional Equipment",
+        "description": "Sony FX6, DJI drones, professional lighting, and editing suite. Always investing in the latest technology for the best results."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Create Something Amazing",
+    "subtitle": "Work With Me",
+    "description": "Ready to bring your vision to life? I'd love to hear about your project and discuss how we can create something extraordinary together.",
+    "info": "Whether you're planning a wedding, need promotional content for your business, or have a creative project in mind, let's chat about making it happen. I'm always excited to take on new challenges and collaborate with passionate people.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Project Type",
+      "message": "Tell me about your project",
+      "submit": "Let's Talk",
+      "subjects": {
+        "wedding": "Wedding Videography",
+        "corporate": "Corporate/Business",
+        "event": "Event Coverage",
+        "creative": "Creative Collaboration",
+        "personal": "Personal Project"
+      }
+    },
+    "testimonials": {
+      "title": "What Clients Say",
+      "client1": "Alex captured our wedding day perfectly! The film brings tears to our eyes every time we watch it. Professional, creative, and so easy to work with.",
+      "client2": "Working with Alex on our company's promotional video was fantastic. He understood our vision immediately and delivered beyond expectations.",
+      "client3": "The event coverage was incredible. Alex managed to capture all the important moments while being completely unobtrusive. Highly recommend!",
+      "client4": "Our music video collaboration was amazing. Alex brought creative ideas that elevated our concept to the next level. Can't wait to work together again!"
+    }
+  },
+  "video_page": {
+    "share": "Share this video",
+    "author": "Creator",
+    "likes": "likes",
+    "download": "Download Video",
+    "related": "Related Videos for You",
+    "video_title": "Professional Cinematic Footage",
+    "video_description": "This stunning piece showcases the artistry of professional cinematography, capturing moments that tell compelling stories. Shot with state-of-the-art equipment and edited by industry professionals, this video represents the pinnacle of visual storytelling. Perfect for commercial use, documentaries, or any project requiring exceptional visual quality."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay Connected",
+      "description": "Get updates on new projects, behind-the-scenes content, and availability for upcoming shoots.",
+      "placeholder": "Your email address",
+      "button": "Stay Updated"
+    },
+    "services": {
+      "title": "Services",
+      "weddings": "Wedding Films",
+      "corporate": "Corporate Videos",
+      "events": "Event Coverage",
+      "creative": "Creative Projects",
+      "personal": "Personal Films"
+    },
+    "connect": {
+      "title": "Let's Connect",
+      "portfolio": "View Portfolio",
+      "about": "About Me",
+      "contact": "Work With Me",
+      "instagram": "Follow on Instagram",
+      "youtube": "Watch on YouTube"
+    },
+    "copyright": "© 2024 Alex Rodriguez - Visual Storyteller | Based in Colorado"
+  },
+  "ui": {
+    "loading": "Loading...",
+    "search": "Search videos...",
+    "filter": "Filter by category",
+    "sort": "Sort by",
+    "view_more": "View More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "page": "Page"
+  }
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://alexrodriguez-videographer.com/img/tn-01.jpg</image:loc>
+            <image:title>Mountain Escape - Professional Videography</image:title>
+            <image:caption>Cinematic nature film showcasing professional videography skills</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alexrodriguez-videographer.com/img/tn-02.jpg</image:loc>
+            <image:title>City Life Chronicles - Urban Timelapse</image:title>
+            <image:caption>Professional urban timelapse videography</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alexrodriguez-videographer.com/img/tn-03.jpg</image:loc>
+            <image:title>Coastal Memories - Wedding Videography</image:title>
+            <image:caption>Professional wedding and event videography</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://alexrodriguez-videographer.com/img/tn-01.jpg</video:thumbnail_loc>
+            <video:title>Mountain Escape - Cinematic Nature Film</video:title>
+            <video:description>Professional videography showcasing the serene beauty of the Rocky Mountains</video:description>
+            <video:content_loc>https://alexrodriguez-videographer.com/video/mountain-escape.mp4</video:content_loc>
+            <video:duration>225</video:duration>
+            <video:publication_date>2024-01-15</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:tag>videography</video:tag>
+            <video:tag>nature</video:tag>
+            <video:tag>colorado</video:tag>
+            <video:tag>cinematic</video:tag>
+        </video:video>
+    </url>
+    
+    <!-- About Page -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/about.html</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/contact.html</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Video Page -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/video-page.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <video:video>
+            <video:thumbnail_loc>https://alexrodriguez-videographer.com/img/tn-featured.jpg</video:thumbnail_loc>
+            <video:title>Professional Cinematic Footage</video:title>
+            <video:description>Stunning piece showcasing the artistry of professional cinematography</video:description>
+            <video:content_loc>https://alexrodriguez-videographer.com/video/featured-work.mp4</video:content_loc>
+            <video:duration>180</video:duration>
+            <video:publication_date>2024-01-15</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:tag>professional videography</video:tag>
+            <video:tag>cinematic</video:tag>
+            <video:tag>colorado videographer</video:tag>
+        </video:video>
+    </url>
+    
+    <!-- Service Pages (Virtual URLs for SEO) -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/wedding-videography</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alexrodriguez-videographer.com/corporate-video-production</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alexrodriguez-videographer.com/drone-cinematography</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alexrodriguez-videographer.com/event-documentation</loc>
+        <lastmod>2024-01-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>

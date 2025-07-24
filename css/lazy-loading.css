@@ -1,0 +1,215 @@
+/* Lazy Loading Styles for Alex Rodriguez Videographer */
+
+/* Base lazy loading styles */
+.lazy-image,
+img[data-src] {
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Loading state */
+.lazy-loading {
+    opacity: 0.6;
+    filter: blur(2px);
+    background-color: #f5f5f5;
+    background-image: linear-gradient(90deg, #f5f5f5 25%, #e0e0e0 50%, #f5f5f5 75%);
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+}
+
+[data-theme="dark"] .lazy-loading {
+    background-color: #2a2a2a;
+    background-image: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
+
+/* Loading shimmer animation */
+@keyframes loading-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Loaded state */
+.lazy-loaded {
+    opacity: 1;
+    filter: none;
+    animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Error state */
+.lazy-error {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    background-color: #f8f8f8;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+}
+
+[data-theme="dark"] .lazy-error {
+    background-color: #2a2a2a;
+}
+
+/* Specific styles for video thumbnails */
+.tm-catalog-item-img.lazy-loading {
+    min-height: 200px;
+    background-color: #f8f9fa;
+    border-radius: 16px 16px 0 0;
+}
+
+[data-theme="dark"] .tm-catalog-item-img.lazy-loading {
+    background-color: #2a2a2a;
+}
+
+/* Placeholder for video thumbnails */
+.tm-catalog-item-img[data-src] {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="60" viewBox="0 0 100 60" fill="none"><rect width="100" height="60" fill="%23f8f9fa"/><circle cx="50" cy="30" r="8" fill="%23dee2e6"/><polygon points="47,26 47,34 53,30" fill="%23f8f9fa"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px 48px;
+}
+
+[data-theme="dark"] .tm-catalog-item-img[data-src] {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="60" viewBox="0 0 100 60" fill="none"><rect width="100" height="60" fill="%232a2a2a"/><circle cx="50" cy="30" r="8" fill="%23444"/><polygon points="47,26 47,34 53,30" fill="%232a2a2a"/></svg>');
+}
+
+/* Loading spinner for critical images */
+.lazy-loading.critical::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive lazy loading */
+@media (max-width: 768px) {
+    .lazy-loading {
+        animation-duration: 1s; /* Faster on mobile */
+    }
+    
+    .tm-catalog-item-img.lazy-loading {
+        min-height: 150px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-loading {
+        animation: none;
+        opacity: 0.8;
+    }
+    
+    .lazy-loaded {
+        animation: none;
+        transition: opacity 0.1s ease;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .lazy-loading {
+        background-color: #000;
+        background-image: none;
+        border: 2px solid #fff;
+    }
+    
+    .lazy-error {
+        background-color: #ff0000;
+        color: #fff;
+    }
+}
+
+/* Print styles */
+@media print {
+    .lazy-loading,
+    .lazy-loaded,
+    .lazy-error {
+        opacity: 1;
+        filter: none;
+        animation: none;
+        background: none;
+    }
+}
+
+/* Future WebP support styles (ready for when images are converted) */
+.webp .lazy-image[data-webp-src] {
+    /* Styles for WebP images when supported */
+}
+
+.no-webp .lazy-image[data-webp-src] {
+    /* Fallback styles for browsers without WebP support */
+}
+
+/* Performance optimizations */
+.lazy-loading,
+.lazy-loaded {
+    /* Use GPU acceleration for smoother animations */
+    transform: translateZ(0);
+    will-change: opacity, filter;
+}
+
+.lazy-loaded {
+    /* Remove will-change after animation completes */
+    will-change: auto;
+}
+
+/* Intersection Observer fallback */
+.no-intersection-observer img[data-src] {
+    /* Styles for browsers without Intersection Observer support */
+    opacity: 1;
+    filter: none;
+}
+
+/* Loading state for background images */
+[data-bg-src].lazy-loading {
+    background-color: #f5f5f5;
+    background-image: linear-gradient(90deg, #f5f5f5 25%, #e0e0e0 50%, #f5f5f5 75%);
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+}
+
+[data-bg-src].lazy-loaded {
+    animation: fade-in 0.3s ease;
+}
+
+/* Accessibility improvements */
+.lazy-loading[alt] {
+    /* Ensure alt text is visible during loading */
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .lazy-loading[alt] {
+    color: #ccc;
+}

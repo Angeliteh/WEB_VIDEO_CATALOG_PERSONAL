@@ -1,0 +1,174 @@
+/* Language Selector Styles */
+.language-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+.language-selector {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #666;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.language-selector:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #999;
+}
+
+.language-selector:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Language Toggle Buttons */
+.language-toggle {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.lang-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #666;
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.lang-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-decoration: none;
+    border-color: #999;
+}
+
+.lang-btn.active {
+    background: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.lang-btn.active:hover {
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .language-selector {
+        font-size: 12px;
+        padding: 6px 10px;
+        min-width: 70px;
+    }
+    
+    .lang-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+/* Language indicator in header */
+.tm-site-header .language-selector-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Language selector in navigation */
+.tm-site-nav .language-toggle {
+    margin-left: 15px;
+    align-items: center;
+}
+
+/* Footer language selector */
+.footer-language-selector {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-language-selector .language-toggle {
+    justify-content: center;
+}
+
+/* Loading state */
+.language-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Smooth transitions for content changes */
+[data-i18n], [data-i18n-html] {
+    transition: opacity 0.2s ease;
+}
+
+.language-changing [data-i18n],
+.language-changing [data-i18n-html] {
+    opacity: 0.7;
+}
+
+/* Flag icons (if you want to add flag icons later) */
+.lang-flag {
+    width: 16px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+
+.lang-flag.flag-en {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjMDEyMTY5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwSDE2VjEuMjMwNzdIMFYwWk0wIDIuNDYxNTRIMTZWMy42OTIzMUgwVjIuNDYxNTRaTTAgNC45MjMwOEgxNlY2LjE1Mzg1SDBWNC45MjMwOFpNMCA3LjM4NDYySDEyVjguNjE1MzlIMFY3LjM4NDYyWk0wIDkuODQ2MTVIMTY2VjExLjA3NjlIMFY5Ljg0NjE1WiIgZmlsbD0iI0ZGRiIvPgo8L3N2Zz4K');
+}
+
+.lang-flag.flag-es {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjRkZBQTAwIi8+CjxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIzIiBmaWxsPSIjQUEwMDAwIi8+CjxyZWN0IHk9IjkiIHdpZHRoPSIxNiIgaGVpZ2h0PSIzIiBmaWxsPSIjQUEwMDAwIi8+Cjwvc3ZnPgo=');
+}
+
+/* Accessibility improvements */
+.language-selector:focus-visible,
+.lang-btn:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .language-selector,
+    .lang-btn {
+        border-width: 2px;
+    }
+    
+    .lang-btn.active {
+        background: #000;
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .language-selector,
+    .lang-btn,
+    [data-i18n],
+    [data-i18n-html] {
+        transition: none;
+    }
+}

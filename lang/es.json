@@ -1,0 +1,200 @@
+{
+  "site": {
+    "title": "MediaVault Pro",
+    "name": "MediaVault Pro",
+    "tagline": "Colección Personal de Medios",
+    "description": "Tu biblioteca personal de videos y medios organizada de forma hermosa"
+  },
+  "navigation": {
+    "videos": "Portafolio",
+    "about": "Sobre Mí",
+    "contact": "Trabajemos Juntos"
+  },
+  "hero": {
+    "welcome": "Bienvenido a Mi Colección Personal de Medios",
+    "subtitle": "Mostrando mi trabajo creativo y momentos memorables",
+    "cta": "Explorar Galería"
+  },
+  "catalog": {
+    "title": "Mi Portafolio de Videos",
+    "categories": "Categorías:",
+    "all": "Todos los Proyectos",
+    "drone": "Tomas Aéreas",
+    "nature": "Naturaleza",
+    "actions": "Acción",
+    "featured": "Trabajo Destacado",
+    "lifestyle": "Estilo de Vida",
+    "travel": "Viajes",
+    "technology": "Proyectos Tech"
+  },
+  "videos": {
+    "cinematic_landscapes": {
+      "title": "Escape a la Montaña",
+      "description": "Un proyecto personal capturando la belleza serena de mi viaje de fin de semana a las Montañas Rocosas. Filmado con mi drone durante la hora dorada, esta pieza representa mi amor por la fotografía de naturaleza y cinematografía."
+    },
+    "urban_timelapse": {
+      "title": "Crónicas de la Vida Urbana",
+      "description": "Mi documentación continua de la vida urbana en el centro. Esta compilación timelapse muestra 6 meses capturando la misma intersección en diferentes momentos, revelando el ritmo de la vida citadina."
+    },
+    "ocean_waves": {
+      "title": "Memorias Costeras",
+      "description": "Imágenes de mis vacaciones de verano en la Costa del Pacífico. Estos momentos íntimos con las olas del océano me recuerdan por qué me enamoré de la videografía - capturar belleza fugaz."
+    },
+    "mountain_adventure": {
+      "title": "Aventura Alpina",
+      "description": "Detrás de cámaras de mi expedición de escalada en montaña. Este documental personal muestra no solo los paisajes impresionantes, sino el viaje y desafíos de la fotografía al aire libre."
+    },
+    "forest_wildlife": {
+      "title": "Vida Silvestre del Patio",
+      "description": "Un proyecto de un año documentando la vida silvestre en mi reserva forestal local. La observación paciente y el respeto por la naturaleza resultaron en estos encuentros íntimos con la fauna."
+    },
+    "sunset_magic": {
+      "title": "Colección Hora Dorada",
+      "description": "Mis capturas favoritas de atardeceres de varios lugares alrededor del mundo. Cada atardecer cuenta una historia diferente - desde viajes en solitario hasta momentos familiares, todos preservados en calidad cinematográfica."
+    },
+    "tech_innovation": {
+      "title": "Proceso Creativo",
+      "description": "Una mirada detrás de escenas a mi flujo de trabajo creativo, desde planificar sesiones hasta post-producción. Este meta-proyecto muestra cómo organizo y manejo mi creciente biblioteca de videos."
+    },
+    "cultural_heritage": {
+      "title": "Patrimonio Familiar",
+      "description": "Documentando las historias de mi abuela y nuestras tradiciones familiares. Este proyecto continuo preserva memorias preciosas y patrimonio cultural para futuras generaciones."
+    },
+    "extreme_sports": {
+      "title": "Guerreros de Fin de Semana",
+      "description": "Imágenes de acción de las aventuras de deportes extremos de mis amigos. Desde skateboarding hasta escalada en roca, estos videos capturan la adrenalina y amistad de nuestras escapadas de fin de semana."
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Narrador Visual y Creador de Contenido",
+    "description": "¡Hola! Soy Alex, un videógrafo y fotógrafo apasionado con base en Colorado. Durante los últimos 8 años, he estado capturando historias a través de mi lente - desde momentos íntimos de bodas hasta paisajes impresionantes, eventos corporativos hasta aventuras personales.",
+    "mission": "Mi viaje comenzó con una cámara simple y amor por la aventura. Hoy, me especializo en crear contenido cinematográfico que cuenta historias auténticas. Ya sea documentando tu día especial, creando contenido promocional para tu negocio, o colaborando en proyectos creativos, aporto pasión y profesionalismo a cada sesión.",
+    "experience": "He tenido el privilegio de trabajar con clientes increíbles en varias industrias - desde negocios locales hasta bodas de destino, videos musicales hasta proyectos documentales. Cada proyecto me enseña algo nuevo y alimenta mi creatividad.",
+    "approach": "Mi enfoque es simple: escuchar, entender y crear. Creo que el mejor contenido viene de conexiones genuinas y entender qué hace única a cada historia.",
+    "services": {
+      "weddings": {
+        "title": "Videografía de Bodas",
+        "description": "Películas cinematográficas de bodas que capturan la emoción y belleza de tu día especial. Desde ceremonias íntimas hasta grandes celebraciones."
+      },
+      "corporate": {
+        "title": "Contenido Corporativo",
+        "description": "Videos promocionales profesionales, cobertura de eventos y narrativa de marca que eleva la presencia de tu negocio."
+      },
+      "events": {
+        "title": "Documentación de Eventos",
+        "description": "Cobertura integral de conferencias, fiestas y eventos especiales con enfoque en capturar momentos auténticos."
+      },
+      "creative": {
+        "title": "Colaboraciones Creativas",
+        "description": "Videos musicales, cortometrajes y proyectos artísticos. Siempre abierto a colaborar con creativos en conceptos únicos."
+      },
+      "personal": {
+        "title": "Proyectos Personales",
+        "description": "Documentales familiares, películas de viaje y celebraciones de hitos personales. Preservando tus memorias preciosas con estilo artístico."
+      },
+      "equipment": {
+        "title": "Equipo Profesional",
+        "description": "Sony FX6, drones DJI, iluminación profesional y suite de edición. Siempre invirtiendo en la última tecnología para los mejores resultados."
+      }
+    },
+    "features": {
+      "quality": {
+        "title": "Contenido de Calidad Premium",
+        "description": "Cada video está filmado y editado profesionalmente para cumplir con estándares de transmisión. Garantizamos resolución cristalina y calidad de audio excepcional."
+      },
+      "diversity": {
+        "title": "Biblioteca de Contenido Diversa",
+        "description": "Desde documentales de naturaleza hasta exploraciones urbanas, nuestra biblioteca abarca todos los géneros y estilos para satisfacer tus necesidades creativas."
+      },
+      "licensing": {
+        "title": "Licenciamiento Flexible",
+        "description": "Elige entre varias opciones de licenciamiento para uso personal, comercial o educativo. Términos claros y precios competitivos."
+      },
+      "support": {
+        "title": "Soporte Experto",
+        "description": "Nuestro equipo de profesionales de video está aquí para ayudarte a encontrar el contenido perfecto para tu proyecto y responder cualquier pregunta."
+      },
+      "innovation": {
+        "title": "Tecnología de Vanguardia",
+        "description": "Utilizamos la última tecnología para ofrecer streaming sin interrupciones, descargas rápidas y una experiencia de navegación intuitiva."
+      },
+      "community": {
+        "title": "Comunidad de Creadores",
+        "description": "Únete a nuestra vibrante comunidad de creadores de contenido y entusiastas del video. Comparte ideas, colabora y crece juntos."
+      }
+    }
+  },
+  "contact": {
+    "title": "Creemos Algo Increíble",
+    "subtitle": "Trabajemos Juntos",
+    "description": "¿Listo para dar vida a tu visión? Me encantaría escuchar sobre tu proyecto y discutir cómo podemos crear algo extraordinario juntos.",
+    "info": "Ya sea que estés planeando una boda, necesites contenido promocional para tu negocio, o tengas un proyecto creativo en mente, hablemos sobre hacerlo realidad. Siempre estoy emocionado de asumir nuevos desafíos y colaborar con personas apasionadas.",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Dirección de Email",
+      "subject": "Tipo de Proyecto",
+      "message": "Cuéntame sobre tu proyecto",
+      "submit": "Hablemos",
+      "subjects": {
+        "wedding": "Videografía de Bodas",
+        "corporate": "Corporativo/Negocios",
+        "event": "Cobertura de Eventos",
+        "creative": "Colaboración Creativa",
+        "personal": "Proyecto Personal"
+      }
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Clientes",
+      "client1": "CinemaVault ha transformado nuestras campañas de marketing. La calidad y variedad del contenido es incomparable en la industria.",
+      "client2": "Como documentalista, dependo de CinemaVault para imágenes B-roll impresionantes. Su colección nunca decepciona.",
+      "client3": "El proceso de licenciamiento es directo y el servicio al cliente es excepcional. Altamente recomendado para cualquier proyecto de video.",
+      "client4": "Desde presentaciones corporativas hasta proyectos creativos, CinemaVault proporciona el contenido visual perfecto cada vez."
+    }
+  },
+  "video_page": {
+    "share": "Compartir este video",
+    "author": "Creador",
+    "likes": "me gusta",
+    "download": "Descargar Video",
+    "related": "Videos Relacionados Para Ti",
+    "video_title": "Metraje Cinematográfico Profesional",
+    "video_description": "Esta pieza impresionante muestra el arte de la cinematografía profesional, capturando momentos que cuentan historias convincentes. Filmado con equipo de última generación y editado por profesionales de la industria, este video representa la cúspide de la narrativa visual. Perfecto para uso comercial, documentales o cualquier proyecto que requiera calidad visual excepcional."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Mantente Conectado",
+      "description": "Recibe actualizaciones sobre nuevos proyectos, contenido detrás de cámaras y disponibilidad para próximas sesiones.",
+      "placeholder": "Tu dirección de email",
+      "button": "Mantente Actualizado"
+    },
+    "services": {
+      "title": "Servicios",
+      "weddings": "Películas de Boda",
+      "corporate": "Videos Corporativos",
+      "events": "Cobertura de Eventos",
+      "creative": "Proyectos Creativos",
+      "personal": "Películas Personales"
+    },
+    "connect": {
+      "title": "Conectemos",
+      "portfolio": "Ver Portafolio",
+      "about": "Sobre Mí",
+      "contact": "Trabajemos Juntos",
+      "instagram": "Seguir en Instagram",
+      "youtube": "Ver en YouTube"
+    },
+    "copyright": "© 2024 Alex Rodriguez - Narrador Visual | Con base en Colorado"
+  },
+  "ui": {
+    "loading": "Cargando...",
+    "search": "Buscar videos...",
+    "filter": "Filtrar por categoría",
+    "sort": "Ordenar por",
+    "view_more": "Ver Más",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "page": "Página"
+  }
+}
