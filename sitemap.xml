@@ -103,5 +103,20 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://alexrodriguez-videographer.com/privacy-policy.html</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://alexrodriguez-videographer.com/terms-of-use.html</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>

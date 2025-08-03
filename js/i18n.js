@@ -45,6 +45,18 @@ class I18n {
                 throw new Error(`Failed to load ${this.currentLanguage} translations`);
             }
             this.translations = await response.json();
+
+            // Make translations available globally for other components
+            window.i18n = {
+                translations: { [this.currentLanguage]: this.translations },
+                currentLanguage: this.currentLanguage,
+                translate: this.translate.bind(this),
+                translatePage: this.translatePage.bind(this),
+                getCurrentLanguage: this.getCurrentLanguage.bind(this),
+                formatDate: this.formatDate.bind(this),
+                formatNumber: this.formatNumber.bind(this)
+            };
+
         } catch (error) {
             console.error('Error loading translations:', error);
             // Fallback to default language if current language fails
@@ -137,11 +149,17 @@ class I18n {
 
         this.currentLanguage = newLanguage;
         localStorage.setItem('cinemavault_language', newLanguage);
-        
+
         await this.loadTranslations();
         this.translatePage();
         this.updateLanguageSelector();
-        
+
+        // Update global i18n object
+        if (window.i18n) {
+            window.i18n.currentLanguage = this.currentLanguage;
+            window.i18n.translations[this.currentLanguage] = this.translations;
+        }
+
         // Trigger custom event for other components
         window.dispatchEvent(new CustomEvent('languageChanged', {
             detail: { language: newLanguage }

@@ -11,12 +11,15 @@
     "contact": "Trabajemos Juntos"
   },
   "hero": {
-    "welcome": "Bienvenido a Mi Colección Personal de Medios",
-    "subtitle": "Mostrando mi trabajo creativo y momentos memorables",
-    "cta": "Explorar Galería"
+    "welcome": "Videógrafo Profesional en Colorado",
+    "subtitle": "Capturando los momentos más importantes de la vida a través de narrativa cinematográfica",
+    "cta": "Ver Mi Trabajo"
   },
   "catalog": {
-    "title": "Mi Portafolio de Videos",
+    "title": "Trabajo Destacado",
+    "subtitle": "Una selección de mis historias visuales más recientes e impactantes",
+    "view_all": "Ver Colección Completa",
+    "view_all_subtitle": "Explora todos los videos con filtros, búsqueda y descripciones detalladas",
     "categories": "Categorías:",
     "all": "Todos los Proyectos",
     "drone": "Tomas Aéreas",
@@ -72,30 +75,30 @@
     "mission": "Mi viaje comenzó con una cámara simple y amor por la aventura. Hoy, me especializo en crear contenido cinematográfico que cuenta historias auténticas. Ya sea documentando tu día especial, creando contenido promocional para tu negocio, o colaborando en proyectos creativos, aporto pasión y profesionalismo a cada sesión.",
     "experience": "He tenido el privilegio de trabajar con clientes increíbles en varias industrias - desde negocios locales hasta bodas de destino, videos musicales hasta proyectos documentales. Cada proyecto me enseña algo nuevo y alimenta mi creatividad.",
     "approach": "Mi enfoque es simple: escuchar, entender y crear. Creo que el mejor contenido viene de conexiones genuinas y entender qué hace única a cada historia.",
-    "services": {
-      "weddings": {
-        "title": "Videografía de Bodas",
-        "description": "Películas cinematográficas de bodas que capturan la emoción y belleza de tu día especial. Desde ceremonias íntimas hasta grandes celebraciones."
+    "interests": {
+      "photography": {
+        "title": "Fotografía",
+        "description": "Explorando luz, composición y momento a través de imágenes fijas. Desde fotografía callejera hasta retratos conceptuales."
       },
-      "corporate": {
-        "title": "Contenido Corporativo",
-        "description": "Videos promocionales profesionales, cobertura de eventos y narrativa de marca que eleva la presencia de tu negocio."
+      "videography": {
+        "title": "Videografía",
+        "description": "Creando narrativas en movimiento que capturan emoción y atmósfera. Técnicas experimentales y narrativa tradicional."
       },
-      "events": {
-        "title": "Documentación de Eventos",
-        "description": "Cobertura integral de conferencias, fiestas y eventos especiales con enfoque en capturar momentos auténticos."
+      "documentary": {
+        "title": "Documental",
+        "description": "Documentando historias reales y momentos auténticos. Interesado en narrativas culturales y viajes personales."
       },
-      "creative": {
+      "experimental": {
+        "title": "Arte Experimental",
+        "description": "Empujando límites con nuevas técnicas, medios mixtos y enfoques no convencionales para la narrativa visual."
+      },
+      "collaboration": {
         "title": "Colaboraciones Creativas",
-        "description": "Videos musicales, cortometrajes y proyectos artísticos. Siempre abierto a colaborar con creativos en conceptos únicos."
-      },
-      "personal": {
-        "title": "Proyectos Personales",
-        "description": "Documentales familiares, películas de viaje y celebraciones de hitos personales. Preservando tus memorias preciosas con estilo artístico."
+        "description": "Siempre abierto a trabajar con artistas, músicos y creativos en proyectos interdisciplinarios únicos."
       },
       "equipment": {
-        "title": "Equipo Profesional",
-        "description": "Sony FX6, drones DJI, iluminación profesional y suite de edición. Siempre invirtiendo en la última tecnología para los mejores resultados."
+        "title": "Herramientas y Técnicas",
+        "description": "Explorando constantemente nuevo equipo y técnicas para expandir las posibilidades creativas y expresión visual."
       }
     },
     "features": {
@@ -126,10 +129,10 @@
     }
   },
   "contact": {
-    "title": "Creemos Algo Increíble",
+    "title": "Colaboremos",
     "subtitle": "Trabajemos Juntos",
-    "description": "¿Listo para dar vida a tu visión? Me encantaría escuchar sobre tu proyecto y discutir cómo podemos crear algo extraordinario juntos.",
-    "info": "Ya sea que estés planeando una boda, necesites contenido promocional para tu negocio, o tengas un proyecto creativo en mente, hablemos sobre hacerlo realidad. Siempre estoy emocionado de asumir nuevos desafíos y colaborar con personas apasionadas.",
+    "description": "Siempre estoy abierto a colaborar con otros creativos, artistas y cualquier persona con historias visuales interesantes que contar.",
+    "info": "Ya sea que tengas un concepto creativo, necesites a alguien para documentar tu arte, o quieras colaborar en un proyecto visual, me encantaría escucharte. Creemos algo significativo juntos.",
     "form": {
       "name": "Tu Nombre",
       "email": "Dirección de Email",
@@ -137,12 +140,22 @@
       "message": "Cuéntame sobre tu proyecto",
       "submit": "Hablemos",
       "subjects": {
-        "wedding": "Videografía de Bodas",
-        "corporate": "Corporativo/Negocios",
-        "event": "Cobertura de Eventos",
         "creative": "Colaboración Creativa",
-        "personal": "Proyecto Personal"
+        "artistic": "Proyecto Artístico",
+        "documentary": "Trabajo Documental",
+        "experimental": "Video Experimental",
+        "personal": "Proyecto Personal",
+        "other": "Otro"
       }
+    },
+    "collaboration": {
+      "title": "Abierto a Colaboraciones",
+      "photography": "Proyectos de Fotografía",
+      "photography_desc": "Sesiones fotográficas colaborativas, conceptos artísticos y proyectos de narrativa visual.",
+      "video": "Arte en Video",
+      "video_desc": "Videos experimentales, documentales y narrativas visuales creativas.",
+      "creative": "Artes Creativas",
+      "creative_desc": "Proyectos interdisciplinarios que combinan medios visuales con otras formas de arte."
     },
     "testimonials": {
       "title": "Lo Que Dicen Nuestros Clientes",
@@ -153,13 +166,38 @@
     }
   },
   "video_page": {
-    "share": "Compartir este video",
-    "author": "Creador",
-    "likes": "me gusta",
-    "download": "Descargar Video",
-    "related": "Videos Relacionados Para Ti",
-    "video_title": "Metraje Cinematográfico Profesional",
-    "video_description": "Esta pieza impresionante muestra el arte de la cinematografía profesional, capturando momentos que cuentan historias convincentes. Filmado con equipo de última generación y editado por profesionales de la industria, este video representa la cúspide de la narrativa visual. Perfecto para uso comercial, documentales o cualquier proyecto que requiera calidad visual excepcional."
+    "header": "Galería Personal de Videos",
+    "video_title": "Escape a la Montaña",
+    "video_description": "Un proyecto personal capturando la belleza serena de mi viaje de fin de semana a las Montañas Rocosas. Filmado con mi drone durante la hora dorada, esta pieza representa mi amor por la fotografía de naturaleza y cinematografía. Este es uno de mis momentos personales favoritos - el silencio pacífico de las montañas al atardecer.",
+    "location": "Ubicación",
+    "location_value": "Montañas Rocosas, Colorado",
+    "date": "Fecha",
+    "date_value": "Octubre 2023",
+    "equipment": "Equipo",
+    "equipment_value": "DJI Mavic 3, Sony A7IV",
+    "share": "Compartir este recuerdo",
+    "share_button": "Compartir Video",
+    "author": "Creado por",
+    "views": "Colección personal • Video privado",
+    "download": "Guardar en Dispositivo",
+    "related": "Más de mi colección",
+    "filter_by": "Filtrar por",
+    "video1": "Crónicas de la Ciudad",
+    "video2": "Memorias Costeras",
+    "video3": "Aventura Alpina",
+    "video4": "Vida Silvestre del Jardín",
+    "video5": "Guerreros de Fin de Semana",
+    "video6": "Experimentos Creativos"
+  },
+  "share_modal": {
+    "title": "Compartir Video",
+    "social_title": "Compartir en Redes Sociales",
+    "link_title": "Copiar Enlace",
+    "embed_title": "Código de Inserción",
+    "qr_title": "Código QR",
+    "copy": "Copiar",
+    "copy_embed": "Copiar Código",
+    "qr_description": "Escanea para ver en móvil"
   },
   "footer": {
     "newsletter": {

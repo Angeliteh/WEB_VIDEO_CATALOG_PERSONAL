@@ -59,48 +59,69 @@ class DarkModeToggle {
     }
 
     createToggleButton() {
-        // Remove existing button if any
-        const existingButton = document.getElementById('theme-toggle');
-        if (existingButton) {
-            existingButton.remove();
+        // Find existing buttons in HTML (desktop and mobile)
+        const desktopButton = document.getElementById('theme-toggle');
+        const mobileButton = document.getElementById('theme-toggle-mobile');
+
+        // Add event listeners to existing buttons
+        if (desktopButton) {
+            desktopButton.addEventListener('click', () => {
+                this.toggleTheme();
+            });
+            this.toggleButton = desktopButton;
         }
 
-        // Create new toggle button
-        this.toggleButton = document.createElement('button');
-        this.toggleButton.id = 'theme-toggle';
-        this.toggleButton.className = 'theme-toggle';
-        this.toggleButton.setAttribute('aria-label', 'Toggle dark mode');
-        this.toggleButton.setAttribute('title', 'Toggle dark/light mode');
-        
-        // Add click event
-        this.toggleButton.addEventListener('click', () => {
-            this.toggleTheme();
-        });
-
-        // Add keyboard support
-        this.toggleButton.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
+        if (mobileButton) {
+            mobileButton.addEventListener('click', () => {
                 this.toggleTheme();
-            }
-        });
+            });
+        }
 
-        // Append to body
-        document.body.appendChild(this.toggleButton);
-        
-        // Update icon
+        // Update icons
         this.updateToggleButton();
     }
 
     updateToggleButton() {
-        if (!this.toggleButton) return;
-        
-        const icon = this.currentTheme === 'light' ? '🌙' : '☀️';
-        const title = this.currentTheme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
-        
-        this.toggleButton.innerHTML = icon;
-        this.toggleButton.setAttribute('title', title);
-        this.toggleButton.setAttribute('aria-label', title);
+        const desktopButton = document.getElementById('theme-toggle');
+        const mobileButton = document.getElementById('theme-toggle-mobile');
+
+        const isLight = this.currentTheme === 'light';
+        const icon = isLight ? 'fa-moon' : 'fa-sun';
+        const text = isLight ? 'Dark' : 'Light';
+        const mobileText = isLight ? 'Dark Mode' : 'Light Mode';
+        const title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+
+        // Update desktop button
+        if (desktopButton) {
+            const iconElement = desktopButton.querySelector('i');
+            const textElement = desktopButton.querySelector('span');
+
+            if (iconElement) {
+                iconElement.className = `fas ${icon}`;
+            }
+            if (textElement) {
+                textElement.textContent = text;
+            }
+
+            desktopButton.setAttribute('title', title);
+            desktopButton.setAttribute('aria-label', title);
+        }
+
+        // Update mobile button
+        if (mobileButton) {
+            const iconElement = mobileButton.querySelector('i');
+            const textElement = mobileButton.querySelector('span');
+
+            if (iconElement) {
+                iconElement.className = `fas ${icon} mr-2`;
+            }
+            if (textElement) {
+                textElement.textContent = mobileText;
+            }
+
+            mobileButton.setAttribute('title', title);
+            mobileButton.setAttribute('aria-label', title);
+        }
     }
 
     listenForSystemThemeChanges() {

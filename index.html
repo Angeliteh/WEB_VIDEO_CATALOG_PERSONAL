@@ -62,9 +62,9 @@
     <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
 
-    <!-- Template CSS - Load async -->
-    <link rel="preload" href="css/templatemo-video-catalog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/templatemo-video-catalog.css"></noscript>
+    <!-- Portfolio CSS - Load async -->
+    <link rel="preload" href="css/alex-rodriguez-portfolio.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/alex-rodriguez-portfolio.css"></noscript>
 
     <!-- FontAwesome - Load async -->
     <link rel="preload" href="fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -72,6 +72,9 @@
 
     <!-- Lazy Loading CSS -->
     <link rel="stylesheet" href="css/lazy-loading.css">
+
+    <!-- Professional Elements CSS -->
+    <link rel="stylesheet" href="css/professional-elements.css">
 
     <!-- Non-critical CSS will be loaded by css-loader.js -->
 
@@ -152,13 +155,7 @@
         ]
     }
     </script>
-<!--
 
-TemplateMo 552 Video Catalog
-
-https://templatemo.com/tm-552-video-catalog
-
--->
 </head>
 
 <body class="home-page">
@@ -189,11 +186,21 @@ https://templatemo.com/tm-552-video-catalog
                                             <li class="nav-item">
                                                 <a class="nav-link tm-nav-link" href="contact.html" data-i18n="navigation.contact">Work With Me</a>
                                             </li>
+                                            <li class="nav-item d-lg-none">
+                                                <button class="nav-link tm-nav-link theme-toggle-mobile" id="theme-toggle-mobile" style="border: none; background: none; color: inherit; width: 100%; text-align: left;">
+                                                    <i class="fas fa-moon mr-2"></i>
+                                                    <span>Dark Mode</span>
+                                                </button>
+                                            </li>
                                         </ul>
                                         <div class="language-toggle ml-3">
                                             <a href="#" class="lang-btn" data-lang="en">EN</a>
                                             <a href="#" class="lang-btn" data-lang="es">ES</a>
                                         </div>
+                                        <button class="theme-toggle" id="theme-toggle">
+                                            <i class="fas fa-moon"></i>
+                                            <span>Dark</span>
+                                        </button>
                                     </div>
                                 </nav>
                             </div>
@@ -203,10 +210,10 @@ https://templatemo.com/tm-552-video-catalog
             </div>
             <div class="tm-welcome-container text-center text-white">
                 <div class="tm-welcome-container-inner">
-                    <p class="tm-welcome-text mb-1 text-white" data-i18n="hero.welcome">Welcome to My Personal Media Collection</p>
-                    <p class="tm-welcome-text mb-5 text-white" data-i18n="hero.subtitle">Showcasing my creative work and memorable moments</p>
+                    <h1 class="tm-welcome-text mb-1 text-white" data-i18n="hero.welcome">Professional Videographer in Colorado</h1>
+                    <p class="tm-welcome-text mb-5 text-white" data-i18n="hero.subtitle">Capturing life's most important moments through cinematic storytelling</p>
                     <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
-                        <span data-i18n="hero.cta">Browse Gallery</span>
+                        <span data-i18n="hero.cta">View My Work</span>
                     </a>
                 </div>
             </div>
@@ -225,38 +232,40 @@ https://templatemo.com/tm-552-video-catalog
             <div id="content" class="mx-auto tm-content-container">
                 <main>
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="tm-page-title mb-4" data-i18n="catalog.title">My Video Portfolio</h2>
-                            <div class="tm-categories-container mb-5">
-                                <h3 class="tm-text-primary tm-categories-text" data-i18n="catalog.categories">Categories:</h3>
-                                <div class="tm-category-list">
-                                    <a href="#" class="tm-category-link active" data-filter="all" data-i18n="catalog.all">All Projects</a>
-                                    <a href="#" class="tm-category-link" data-filter="featured" data-i18n="catalog.featured">Featured Work</a>
-                                    <a href="#" class="tm-category-link" data-filter="nature" data-i18n="catalog.nature">Nature</a>
-                                    <a href="#" class="tm-category-link" data-filter="drone" data-i18n="catalog.drone">Aerial Shots</a>
-                                    <a href="#" class="tm-category-link" data-filter="lifestyle" data-i18n="catalog.lifestyle">Lifestyle</a>
-                                    <a href="#" class="tm-category-link" data-filter="actions" data-i18n="catalog.actions">Action</a>
-                                    <a href="#" class="tm-category-link" data-filter="technology" data-i18n="catalog.technology">Tech Projects</a>
-                                </div>
-                            </div>
+                        <div class="col-12 text-center">
+                            <h2 class="tm-page-title mb-3" data-i18n="catalog.title">Featured Work</h2>
+                            <p class="tm-subtitle mb-5" data-i18n="catalog.subtitle">A selection of my most recent and impactful visual stories</p>
                         </div>
                     </div>
                     
+                    <!-- Featured Videos Grid 2x2 -->
                     <div class="row" id="video-gallery">
-                        <!-- Videos will be dynamically loaded here -->
+                        <!-- Featured videos will be dynamically loaded here -->
                     </div>
 
-                    <!-- Dynamic Pagination -->
-                    <div id="pagination-container">
-                        <!-- Pagination will be dynamically generated here -->
+                    <!-- View Full Collection Button -->
+                    <div class="row mt-5 pt-4">
+                        <div class="col-12 text-center">
+                            <a href="video-page.html" class="btn btn-primary btn-lg tm-btn-view-all">
+                                <i class="fas fa-play-circle mr-2"></i>
+                                <span data-i18n="catalog.view_all">View Complete Collection</span>
+                            </a>
+                            <p class="mt-3 text-muted" data-i18n="catalog.view_all_subtitle">Explore all videos with filters, search, and detailed descriptions</p>
+                        </div>
                     </div>
                 </main>
 
                 <!-- Subscribe form and footer links -->
 
 
+
+
                 <footer class="row pt-5">
                     <div class="col-12">
+                        <div class="text-center mb-3">
+                            <a href="privacy-policy.html" class="text-muted mr-3">Privacy Policy</a>
+                            <a href="terms-of-use.html" class="text-muted">Terms of Use</a>
+                        </div>
                         <p class="text-right" data-i18n="footer.copyright">© 2024 Alex Rodriguez - Visual Storyteller | Based in Colorado</p>
                     </div>
                 </footer>
@@ -264,6 +273,8 @@ https://templatemo.com/tm-552-video-catalog
         </div>
 
     </div> <!-- .tm-page-wrap -->
+
+
 
     <!-- Critical Scripts -->
     <script src="js/css-loader.js"></script>
@@ -276,8 +287,11 @@ https://templatemo.com/tm-552-video-catalog
     <script src="js/bootstrap.min.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/contact-form.js"></script>
     <script src="js/analytics.js"></script>
-    <script src="js/gallery.js"></script>
+    <!-- Video Data Adapter (API + Fallback) -->
+    <script src="js/video-data-adapter.js"></script>
+    <script src="js/index-gallery.js?v=2"></script>
     <script>
         function setVideoSize() {
             const vidWidth = 1920;

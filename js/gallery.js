@@ -23,8 +23,12 @@ class VideoGallery {
         }
 
         this.loadVideoData();
-        this.setupEventListeners();
-        this.renderGallery();
+        this.renderFeaturedGallery(); // Show only featured videos for index
+
+        // Listen for language changes
+        window.addEventListener('languageChanged', () => {
+            this.renderFeaturedGallery();
+        });
     }
 
     loadVideoData() {
@@ -37,7 +41,10 @@ class VideoGallery {
                 thumbnail: 'img/tn-01.jpg',
                 category: 'nature',
                 featured: true,
-                date: '2024-01-15'
+                date: '2024-01-15',
+                location: 'Rocky Mountains, Colorado',
+                equipment: 'DJI Mavic 3, Sony A7IV',
+                videoFile: 'video/cinematic-landscapes.mp4'
             },
             {
                 id: 2,
@@ -45,8 +52,11 @@ class VideoGallery {
                 description: 'videos.urban_timelapse.description',
                 thumbnail: 'img/tn-02.jpg',
                 category: 'lifestyle',
-                featured: false,
-                date: '2024-01-10'
+                featured: true,
+                date: '2024-01-10',
+                location: 'Downtown Denver, Colorado',
+                equipment: 'Sony A7IV, Gimbal Stabilizer',
+                videoFile: 'video/urban-timelapse.mp4'
             },
             {
                 id: 3,
@@ -55,7 +65,10 @@ class VideoGallery {
                 thumbnail: 'img/tn-03.jpg',
                 category: 'nature',
                 featured: true,
-                date: '2024-01-08'
+                date: '2024-01-08',
+                location: 'Pacific Coast, California',
+                equipment: 'DJI Mavic 3, ND Filters',
+                videoFile: 'video/ocean-waves.mp4'
             },
             {
                 id: 4,
@@ -90,7 +103,7 @@ class VideoGallery {
                 description: 'videos.tech_innovation.description',
                 thumbnail: 'img/tn-07.jpg',
                 category: 'technology',
-                featured: true,
+                featured: false,
                 date: '2023-12-28'
             },
             {
@@ -108,7 +121,7 @@ class VideoGallery {
                 description: 'videos.extreme_sports.description',
                 thumbnail: 'img/tn-09.jpg',
                 category: 'actions',
-                featured: true,
+                featured: false,
                 date: '2023-12-20'
             },
             // Add more videos for pagination demo
@@ -209,12 +222,13 @@ class VideoGallery {
             container.appendChild(videoElement);
         });
 
-        // Update translations for new content
-        setTimeout(() => {
-            if (window.i18n) {
+        // Update translations for new content immediately
+        if (window.i18n && window.i18n.translatePage) {
+            // Force translation update
+            setTimeout(() => {
                 window.i18n.translatePage();
-            }
-        }, 100);
+            }, 50);
+        }
 
         // Render pagination
         this.renderPagination(totalPages);
@@ -223,26 +237,113 @@ class VideoGallery {
         this.animateVideoCards();
     }
 
+    renderFeaturedGallery() {
+        const container = document.getElementById('video-gallery');
+        if (!container) {
+            console.error('Gallery container not found');
+            return;
+        }
+
+        // Get only featured videos, limit to 4 for 2x2 grid
+        const featuredVideos = this.allVideos
+            .filter(video => video.featured)
+            .slice(0, 4);
+
+        // Clear container
+        container.innerHTML = '';
+
+        // Render featured videos
+        featuredVideos.forEach(video => {
+            const videoElement = this.createFeaturedVideoElement(video);
+            container.appendChild(videoElement);
+        });
+
+        // Update translations for new content immediately
+        if (window.i18n && window.i18n.translatePage) {
+            setTimeout(() => {
+                window.i18n.translatePage();
+            }, 100);
+        }
+
+        // Add loading animation
+        this.animateVideoCards();
+    }
+
+    createFeaturedVideoElement(video) {
+        const col = document.createElement('div');
+        col.className = 'col-lg-6 col-md-6 col-sm-12 tm-catalog-item'; // 2x2 grid
+
+        // Get translated text
+        const translatedTitle = this.getTranslatedText(video.title);
+        const translatedDescription = this.getTranslatedText(video.description);
+
+        col.innerHTML = `
+            <div class="video-card featured-video-card">
+                <div class="position-relative tm-thumbnail-container">
+                    <img data-src="${video.thumbnail}"
+                         alt="${translatedTitle}"
+                         class="img-fluid tm-catalog-item-img lazy-image"
+                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUY1RjUiLz48L3N2Zz4="
+                         ${video.webpThumbnail ? `data-webp-src="${video.webpThumbnail}"` : ''}>
+                    <a href="video-page.html?id=${video.id}" class="position-absolute tm-img-overlay" data-video-id="${video.id}" data-video-title="${video.title}" data-video-category="${video.category}">
+                        <i class="fas fa-play tm-overlay-icon"></i>
+                    </a>
+                    <div class="featured-badge">Featured</div>
+                </div>
+                <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                    <h3 class="tm-text-primary mb-3 tm-catalog-item-title" data-i18n="${video.title}">${translatedTitle}</h3>
+                    <p class="tm-catalog-item-text" data-i18n="${video.description}">${translatedDescription}</p>
+                    <div class="video-meta">
+                        <span class="video-date">${this.formatDate(video.date)}</span>
+                        <span class="video-category">${this.getCategoryName(video.category)}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add click tracking to video links
+        const videoLink = col.querySelector('.tm-img-overlay');
+        if (videoLink) {
+            videoLink.addEventListener('click', (e) => {
+                if (window.trackVideoInteraction) {
+                    window.trackVideoInteraction('click', video.title, video.category);
+                }
+            });
+        }
+
+        // Add lazy loading to the new image
+        const lazyImage = col.querySelector('.lazy-image');
+        if (lazyImage && window.addLazyImage) {
+            window.addLazyImage(lazyImage);
+        }
+
+        return col;
+    }
+
     createVideoElement(video) {
         const col = document.createElement('div');
         col.className = 'col-lg-4 col-md-6 col-sm-12 tm-catalog-item';
-        
+
+        // Get translated text
+        const translatedTitle = this.getTranslatedText(video.title);
+        const translatedDescription = this.getTranslatedText(video.description);
+
         col.innerHTML = `
             <div class="video-card">
                 <div class="position-relative tm-thumbnail-container">
                     <img data-src="${video.thumbnail}"
-                         alt="${video.title}"
+                         alt="${translatedTitle}"
                          class="img-fluid tm-catalog-item-img lazy-image"
                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUY1RjUiLz48L3N2Zz4="
                          ${video.webpThumbnail ? `data-webp-src="${video.webpThumbnail}"` : ''}>
-                    <a href="video-page.html" class="position-absolute tm-img-overlay" data-video-id="${video.id}" data-video-title="${video.title}" data-video-category="${video.category}">
+                    <a href="video-page.html?id=${video.id}" class="position-absolute tm-img-overlay" data-video-id="${video.id}" data-video-title="${video.title}" data-video-category="${video.category}">
                         <i class="fas fa-play tm-overlay-icon"></i>
                     </a>
                     ${video.featured ? '<div class="featured-badge">Featured</div>' : ''}
                 </div>
                 <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                    <h3 class="tm-text-primary mb-3 tm-catalog-item-title" data-i18n="${video.title}"></h3>
-                    <p class="tm-catalog-item-text" data-i18n="${video.description}"></p>
+                    <h3 class="tm-text-primary mb-3 tm-catalog-item-title" data-i18n="${video.title}">${translatedTitle}</h3>
+                    <p class="tm-catalog-item-text" data-i18n="${video.description}">${translatedDescription}</p>
                     <div class="video-meta">
                         <span class="video-date">${this.formatDate(video.date)}</span>
                         <span class="video-category">${this.getCategoryName(video.category)}</span>
@@ -268,6 +369,29 @@ class VideoGallery {
         }
         
         return col;
+    }
+
+    getTranslatedText(key) {
+        // Try to get translated text from i18n system
+        if (window.i18n && window.i18n.translations && window.i18n.currentLanguage) {
+            const translations = window.i18n.translations[window.i18n.currentLanguage];
+            const keys = key.split('.');
+            let value = translations;
+
+            for (const k of keys) {
+                if (value && typeof value === 'object' && k in value) {
+                    value = value[k];
+                } else {
+                    // Fallback to key if translation not found
+                    return key;
+                }
+            }
+
+            return typeof value === 'string' ? value : key;
+        }
+
+        // Fallback to key if no i18n system
+        return key;
     }
 
     renderPagination(totalPages) {
@@ -352,7 +476,8 @@ class VideoGallery {
 
     formatDate(dateString) {
         const date = new Date(dateString);
-        return date.toLocaleDateString(window.i18n?.getCurrentLanguage() || 'en', {
+        const currentLanguage = window.i18n?.currentLanguage || 'en';
+        return date.toLocaleDateString(currentLanguage, {
             year: 'numeric',
             month: 'short'
         });

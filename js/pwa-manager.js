@@ -79,8 +79,10 @@ class PWAManager {
             // Store the event for later use
             this.deferredPrompt = e;
 
-            // Show custom install button
-            this.showInstallButton();
+            // Only show install button on mobile devices
+            if (this.isMobileDevice()) {
+                this.showInstallButton();
+            }
 
             // Log to debug panel
             if (window.debugPanel) {
@@ -208,21 +210,23 @@ class PWAManager {
     showManualInstallOption() {
         console.log('📱 Showing manual install option...');
 
+        // Only show on mobile devices
+        if (!this.isMobileDevice()) {
+            return;
+        }
+
         // Create manual install button
         const button = this.createInstallButton();
-        button.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-            Add to Home Screen
-        `;
 
-        button.addEventListener('click', () => {
-            this.showManualInstallInstructions();
+        // Update the content for manual install
+        const installArea = button.querySelector('div');
+        installArea.addEventListener('click', (e) => {
+            if (e.target.id !== 'pwa-install-close' && !e.target.closest('#pwa-install-close')) {
+                this.showManualInstallInstructions();
+            }
         });
 
         document.body.appendChild(button);
-        button.style.display = 'block';
     }
 
     // Show manual install instructions
@@ -305,74 +309,157 @@ class PWAManager {
 
     // Show custom install button
     showInstallButton() {
-        // Create install button if it doesn't exist
-        let installButton = document.getElementById('pwa-install-button');
-        
-        if (!installButton) {
-            installButton = this.createInstallButton();
-            document.body.appendChild(installButton);
+        // Check if user has dismissed it recently (within 24 hours)
+        const dismissed = localStorage.getItem('pwa-install-dismissed');
+        if (dismissed) {
+            const dismissedTime = parseInt(dismissed);
+            const now = Date.now();
+            const hoursSinceDismissed = (now - dismissedTime) / (1000 * 60 * 60);
+
+            if (hoursSinceDismissed < 24) {
+                console.log('Install prompt dismissed recently, not showing');
+                return;
+            }
         }
 
-        installButton.style.display = 'block';
-        
-        // Add click handler
-        installButton.addEventListener('click', () => {
-            this.promptInstall();
-        });
+        // Only show on mobile devices
+        if (!this.isMobileDevice()) {
+            return;
+        }
+
+        // Create install button if it doesn't exist
+        let installContainer = document.getElementById('pwa-install-container');
+
+        if (!installContainer) {
+            installContainer = this.createInstallButton();
+            document.body.appendChild(installContainer);
+        }
+
+        installContainer.style.display = 'block';
     }
 
-    // Create install button element
+    // Check if device is mobile
+    isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               (window.innerWidth <= 768);
+    }
+
+    // Create install button element (mobile only, minimalist design)
     createInstallButton() {
-        const button = document.createElement('button');
-        button.id = 'pwa-install-button';
-        button.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-            Install App
+        const container = document.createElement('div');
+        container.id = 'pwa-install-container';
+
+        container.innerHTML = `
+            <div style="
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.9);
+                color: white;
+                border-radius: 12px;
+                padding: 12px 16px;
+                font-size: 14px;
+                font-family: 'Source Sans Pro', sans-serif;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                max-width: 280px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                backdrop-filter: blur(10px);
+                animation: slideUp 0.3s ease-out;
+            ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <span style="flex: 1; font-weight: 500;">Add to Home Screen</span>
+                <button id="pwa-install-close" style="
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    padding: 4px;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0.7;
+                    transition: opacity 0.2s ease;
+                " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
         `;
-        
-        // Style the button
-        Object.assign(button.style, {
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            color: 'white',
-            border: 'none',
-            borderRadius: '25px',
-            padding: '12px 20px',
-            fontSize: '14px',
-            fontWeight: '600',
-            cursor: 'pointer',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-            zIndex: '1000',
-            display: 'none',
-            alignItems: 'center',
-            gap: '8px',
-            transition: 'all 0.3s ease',
-            fontFamily: 'Source Sans Pro, sans-serif'
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from {
+                    transform: translateX(-50%) translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(-50%) translateY(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideDown {
+                from {
+                    transform: translateX(-50%) translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(-50%) translateY(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add click handler for install
+        const installArea = container.querySelector('div');
+        installArea.style.cursor = 'pointer';
+        installArea.addEventListener('click', (e) => {
+            if (e.target.id !== 'pwa-install-close' && !e.target.closest('#pwa-install-close')) {
+                this.promptInstall();
+            }
         });
 
-        // Add hover effect
-        button.addEventListener('mouseenter', () => {
-            button.style.transform = 'translateY(-2px)';
-            button.style.boxShadow = '0 6px 25px rgba(0,0,0,0.4)';
+        // Add close button handler
+        const closeBtn = container.querySelector('#pwa-install-close');
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.hideInstallButton();
+            // Remember user dismissed it
+            localStorage.setItem('pwa-install-dismissed', Date.now().toString());
         });
 
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = 'translateY(0)';
-            button.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-        });
+        // Auto-hide after 10 seconds
+        setTimeout(() => {
+            if (container.parentNode) {
+                this.hideInstallButton();
+            }
+        }, 10000);
 
-        return button;
+        return container;
     }
 
     // Hide install button
     hideInstallButton() {
-        const installButton = document.getElementById('pwa-install-button');
-        if (installButton) {
-            installButton.style.display = 'none';
+        const installContainer = document.getElementById('pwa-install-container');
+        if (installContainer) {
+            installContainer.style.animation = 'slideDown 0.3s ease-out forwards';
+            setTimeout(() => {
+                if (installContainer.parentNode) {
+                    installContainer.remove();
+                }
+            }, 300);
         }
     }
 

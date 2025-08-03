@@ -1,9 +1,6 @@
 /*
-
-TemplateMo 552 Video Catalog
-
-https://templatemo.com/tm-552-video-catalog
-
+Alex Rodriguez Videographer - Professional Portfolio Styles
+Custom CSS for videographer portfolio website
 */
 
 html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -258,20 +255,66 @@ h2, p { color: #666666; }
     align-items: center;
 }
 
-.tm-categories-text { margin-right: 16px; }
-.tm-category-list { font-size: 1.75rem; }
+.tm-categories-text {
+    margin-right: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.tm-category-list {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .tm-category-item { margin: 16px; }
 
 .tm-category-link {
     color: #3399CC;
-    padding: 10px;
-    border-bottom: 3px solid transparent;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: rgba(51, 153, 204, 0.1);
+    display: inline-block;
+    font-size: 14px;
 }
 
 .tm-category-link.active,
 .tm-category-link:hover {
-    border-bottom: 3px solid #3399CC;
-    color: #3399CC;
+    border-color: #3399CC;
+    color: #ffffff;
+    background-color: #3399CC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(51, 153, 204, 0.3);
+}
+
+/* Categories responsive design */
+@media (max-width: 768px) {
+    .tm-categories-container {
+        margin-bottom: 30px !important;
+    }
+
+    .tm-categories-text {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+    }
+
+    .tm-category-list {
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+
+    .tm-category-link {
+        padding: 10px 16px;
+        font-size: 13px;
+        margin: 2px;
+    }
 }
 
 .tm-paging-link {
@@ -351,7 +394,7 @@ h2, p { color: #666666; }
 }
 
 #tm-fixed-header-bg { height: 450px; }
-.tm-fixed-header-1 { background-image: url(../img/video-detail-1.jpg); }
+.tm-fixed-header-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .tm-fixed-header-2 { background-image: url(../img/about-1.jpg); }
 .tm-fixed-header-3 { background-image: url(../img/contact-1.jpg); }
 

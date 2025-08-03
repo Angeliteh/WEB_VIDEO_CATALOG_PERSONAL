@@ -1,0 +1,300 @@
+/* Professional Elements CSS - Alex Rodriguez Videographer */
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp-float a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Newsletter Section */
+.tm-newsletter-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.tm-newsletter-form .form-control {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px 0 0 50px;
+    font-size: 16px;
+}
+
+.tm-newsletter-form .btn {
+    border-radius: 0 50px 50px 0;
+    padding: 15px 30px;
+    border: none;
+    background: #ff6b6b;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tm-newsletter-form .btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.trust-badge i {
+    font-size: 24px;
+    color: #667eea;
+}
+
+.trust-badge span {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Professional Stats */
+.stats-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+    margin: 60px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #667eea;
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Testimonials Carousel */
+.testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin: 60px 0;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.testimonial-role {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #667eea;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    margin: 60px 0;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: white;
+    color: #ff6b6b;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .tm-newsletter-section {
+        padding: 30px 20px;
+    }
+    
+    .tm-newsletter-form .form-control,
+    .tm-newsletter-form .btn {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .trust-badges {
+        gap: 15px;
+    }
+    
+    .trust-badge {
+        padding: 10px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}

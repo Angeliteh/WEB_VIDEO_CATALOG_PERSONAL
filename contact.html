@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/templatemo-video-catalog.css">
+    <link rel="stylesheet" href="css/alex-rodriguez-portfolio.css">
     <link rel="stylesheet" href="css/i18n.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/clean-layout.css">
@@ -91,17 +91,11 @@
     }
     </script>
 </head>
-<!--
 
-TemplateMo 552 Video Catalog
-
-https://templatemo.com/tm-552-video-catalog
-
--->
 <body class="home-page">
 	<div class="tm-page-wrap mx-auto">
 		<div class="position-relative">
-			<div class="potition-absolute tm-site-header">
+			<div class="position-absolute tm-site-header">
 				<div class="container-fluid position-relative">
 					<div class="row">						
                         <div class="col-12">
@@ -126,11 +120,21 @@ https://templatemo.com/tm-552-video-catalog
                                             <li class="nav-item active">
                                                 <a class="nav-link tm-nav-link" href="contact.html" data-i18n="navigation.contact">Work With Me <span class="sr-only">(current)</span></a>
                                             </li>
+                                            <li class="nav-item d-lg-none">
+                                                <button class="nav-link tm-nav-link theme-toggle-mobile" id="theme-toggle-mobile" style="border: none; background: none; color: inherit; width: 100%; text-align: left;">
+                                                    <i class="fas fa-moon mr-2"></i>
+                                                    <span>Dark Mode</span>
+                                                </button>
+                                            </li>
                                         </ul>
                                         <div class="language-toggle ml-3">
                                             <a href="#" class="lang-btn" data-lang="en">EN</a>
                                             <a href="#" class="lang-btn" data-lang="es">ES</a>
                                         </div>
+                                        <button class="theme-toggle" id="theme-toggle">
+                                            <i class="fas fa-moon"></i>
+                                            <span>Dark</span>
+                                        </button>
                                     </div>
                                 </nav>
                             </div>
@@ -156,17 +160,17 @@ https://templatemo.com/tm-552-video-catalog
 					<div class="row mt-3 mb-5 pb-3">
 						<div class="col-12">
 							<div class="mx-auto tm-about-text-container px-3">
-								<h2 class="tm-page-title mb-4 tm-text-primary" data-i18n="contact.title">Let's Create Something Amazing</h2>
+								<h2 class="tm-page-title mb-4 tm-text-primary" data-i18n="contact.title">Let's Collaborate</h2>
                                 <p class="mb-4" data-i18n="contact.description">
-                                    Ready to bring your vision to life? I'd love to hear about your project and discuss how we can create something extraordinary together.
+                                    I'm always open to collaborating with fellow creatives, artists, and anyone with interesting visual stories to tell.
                                 </p>
-                                <p class="mb-4" data-i18n="contact.info">Whether you're planning a wedding, need promotional content for your business, or have a creative project in mind, let's chat about making it happen. I'm always excited to take on new challenges and collaborate with passionate people.</p>
+                                <p class="mb-4" data-i18n="contact.info">Whether you have a creative concept, need someone to document your art, or want to collaborate on a visual project, I'd love to hear from you. Let's create something meaningful together.</p>
 							</div>
 						</div>						
 					</div>
                     <div class="mx-auto pb-3 tm-about-text-container px-3">
                         <div class="row">
-                            <div class="col-lg-6 mb-5">
+                            <div class="col-lg-5 mb-5">
                                 <form id="contact-form" action="" method="POST" class="tm-contact-form">
                                   <div class="form-group">
                                     <input type="text" name="name" class="form-control rounded-0" data-i18n-placeholder="contact.form.name" placeholder="Full Name" required="" />
@@ -176,12 +180,13 @@ https://templatemo.com/tm-552-video-catalog
                                   </div>
                                   <div class="form-group">
                                     <select class="form-control" id="contact-select" name="inquiry">
-                                      <option value="-" data-i18n="contact.form.subject">Project Type</option>
-                                      <option value="wedding" data-i18n="contact.form.subjects.wedding">Wedding Videography</option>
-                                      <option value="corporate" data-i18n="contact.form.subjects.corporate">Corporate/Business</option>
-                                      <option value="event" data-i18n="contact.form.subjects.event">Event Coverage</option>
+                                      <option value="-" data-i18n="contact.form.subject">Collaboration Type</option>
                                       <option value="creative" data-i18n="contact.form.subjects.creative">Creative Collaboration</option>
+                                      <option value="artistic" data-i18n="contact.form.subjects.artistic">Artistic Project</option>
+                                      <option value="documentary" data-i18n="contact.form.subjects.documentary">Documentary Work</option>
+                                      <option value="experimental" data-i18n="contact.form.subjects.experimental">Experimental Video</option>
                                       <option value="personal" data-i18n="contact.form.subjects.personal">Personal Project</option>
+                                      <option value="other" data-i18n="contact.form.subjects.other">Other</option>
                                     </select>
                                   </div>
                                   <div class="form-group">
@@ -194,11 +199,11 @@ https://templatemo.com/tm-552-video-catalog
                                   </div>
                                 </form>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-7">
                                 <div class="mapouter mb-60">
                                     <div class="gmap_canvas">
                                         <iframe width="100%" height="520" id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                            src="https://maps.google.com/maps?q=Denver,+Colorado,+USA&t=&z=11&ie=UTF8&iwloc=&output=embed"
                                             frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                     </div>
                                 </div>
@@ -212,40 +217,29 @@ https://templatemo.com/tm-552-video-catalog
 				<div class="mx-auto tm-content-container mt-4 px-3 mb-3">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-page-title mb-5 tm-text-primary" data-i18n="contact.testimonials.title">What Our Clients Say</h2>
+                            <h2 class="tm-page-title mb-5 tm-text-primary" data-i18n="contact.collaboration.title">Open to Collaboration</h2>
                         </div>
                     </div>
 					<div class="row">
-		                <div class="col-lg-6 mb-5 pt-3">
-		                    <div class="media tm-testimonial">
-                                <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-1.jpg" alt="Client testimonial">
-                                <p class="media-body pt-3 tm-testimonial-text" data-i18n="contact.testimonials.client1">
-                                    CinemaVault has transformed our marketing campaigns. The quality and variety of content is unmatched in the industry.
-                                </p>
+		                <div class="col-lg-4 mb-4 text-center">
+		                    <div class="tm-collaboration-item">
+                                <i class="fas fa-camera-retro fa-3x tm-text-primary mb-3"></i>
+                                <h4 data-i18n="contact.collaboration.photography">Photography Projects</h4>
+                                <p data-i18n="contact.collaboration.photography_desc">Collaborative photo shoots, artistic concepts, and visual storytelling projects.</p>
                             </div>
 		                </div>
-		                <div class="col-lg-6 mb-5 pt-3">
-                              <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-2.jpg" alt="Client testimonial">
-                              <p class="media-body pt-3 tm-testimonial-text" data-i18n="contact.testimonials.client2">
-                                As a documentary filmmaker, I rely on CinemaVault for stunning B-roll footage. Their collection never disappoints.
-                              </p>
+		                <div class="col-lg-4 mb-4 text-center">
+                              <div class="tm-collaboration-item">
+                              <i class="fas fa-video fa-3x tm-text-primary mb-3"></i>
+                              <h4 data-i18n="contact.collaboration.video">Video Art</h4>
+                              <p data-i18n="contact.collaboration.video_desc">Experimental videos, documentaries, and creative visual narratives.</p>
                             </div>
                         </div>
-                        <div class="col-lg-6 mb-5 pt-3">
-                            <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-3.png" alt="Client testimonial">
-                              <p class="media-body pt-3 tm-testimonial-text" data-i18n="contact.testimonials.client3">
-                                The licensing process is straightforward and the customer service is exceptional. Highly recommended for any video project.
-                              </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-5 pt-3">
-                            <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-4.png" alt="Client testimonial">
-                              <p class="media-body pt-3 tm-testimonial-text" data-i18n="contact.testimonials.client4">
-                                From corporate presentations to creative projects, CinemaVault provides the perfect visual content every time.
-                              </p>
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="tm-collaboration-item">
+                              <i class="fas fa-palette fa-3x tm-text-primary mb-3"></i>
+                              <h4 data-i18n="contact.collaboration.creative">Creative Arts</h4>
+                              <p data-i18n="contact.collaboration.creative_desc">Interdisciplinary projects combining visual media with other art forms.</p>
                             </div>
                         </div>
 		            </div>
@@ -254,51 +248,16 @@ https://templatemo.com/tm-552-video-catalog
 		</main>
 
 		<div class="container-fluid tm-content-container mx-auto pt-4">
-			<!-- Subscribe form and footer links -->
-            <div class="row pt-3">
-                <div class="col-xl-6 col-lg-12 mb-4">
-                    <div class="tm-bg-gray p-5 h-100">
-                        <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                        <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
-                            work. Thank you.</p>
-                        <form action="" method="GET" class="tm-subscribe-form">
-                            <input type="text" name="email" placeholder="Your Email..." required>
-                            <button type="submit" class="btn rounded-0 btn-primary tm-btn-small">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                    <div class="p-5 tm-bg-gray">
-                        <h3 class="tm-text-primary mb-4" data-i18n="footer.services.title">Services</h3>
-                        <ul class="list-unstyled tm-footer-links">
-                            <li><a href="#" data-i18n="footer.services.weddings">Wedding Films</a></li>
-                            <li><a href="#" data-i18n="footer.services.corporate">Corporate Videos</a></li>
-                            <li><a href="#" data-i18n="footer.services.events">Event Coverage</a></li>
-                            <li><a href="#" data-i18n="footer.services.creative">Creative Projects</a></li>
-                            <li><a href="#" data-i18n="footer.services.personal">Personal Films</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                    <div class="p-5 tm-bg-gray h-100">
-                        <h3 class="tm-text-primary mb-4" data-i18n="footer.connect.title">Let's Connect</h3>
-                        <ul class="list-unstyled tm-footer-links">
-                            <li><a href="index.html" data-i18n="footer.connect.portfolio">View Portfolio</a></li>
-                            <li><a href="about.html" data-i18n="footer.connect.about">About Me</a></li>
-                            <li><a href="contact.html" data-i18n="footer.connect.contact">Work With Me</a></li>
-                            <li><a href="#" data-i18n="footer.connect.instagram">Follow on Instagram</a></li>
-                            <li><a href="#" data-i18n="footer.connect.youtube">Watch on YouTube</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> <!-- row -->
-
             <footer class="row pt-5">
                 <div class="col-12">
+                    <div class="text-center mb-3">
+                        <a href="privacy-policy.html" class="text-muted mr-3">Privacy Policy</a>
+                        <a href="terms-of-use.html" class="text-muted">Terms of Use</a>
+                    </div>
                     <p class="text-right" data-i18n="footer.copyright">© 2024 Alex Rodriguez - Visual Storyteller | Based in Colorado</p>
                 </div>
             </footer>
-		</div>		
+		</div>
 	</div>
 
 	<script src="js/jquery-3.4.1.min.js"></script>
@@ -306,6 +265,7 @@ https://templatemo.com/tm-552-video-catalog
     <script src="js/parallax.min.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/contact-form.js"></script>
     <script src="js/pwa-manager.js"></script>
 </body>
 </html>
