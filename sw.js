@@ -4,39 +4,39 @@
  */
 
 const CACHE_NAME = 'alex-rodriguez-videographer-v1.2.0';
-const OFFLINE_URL = '/offline.html';
+const OFFLINE_URL = './offline.html';
 
 // Assets to cache immediately
 const CRITICAL_ASSETS = [
-  '/',
-  '/index.html',
-  '/about.html', 
-  '/contact.html',
-  '/offline.html',
-  '/css/critical.css',
-  '/css/bootstrap.min.css',
-  '/css/templatemo-video-catalog.css',
-  '/css/lazy-loading.css',
-  '/js/jquery-3.4.1.min.js',
-  '/js/bootstrap.min.js',
-  '/js/gallery.js',
-  '/js/lazy-loading.js',
-  '/js/i18n.js',
-  '/js/dark-mode.js',
-  '/lang/en.json',
-  '/lang/es.json',
-  '/fontawesome/css/all.min.css',
-  '/manifest.json'
+  './',
+  './index.html',
+  './about.html',
+  './contact.html',
+  './offline.html',
+  './css/critical.css',
+  './css/bootstrap.min.css',
+  './css/templatemo-video-catalog.css',
+  './css/lazy-loading.css',
+  './js/jquery-3.4.1.min.js',
+  './js/bootstrap.min.js',
+  './js/gallery.js',
+  './js/lazy-loading.js',
+  './js/i18n.js',
+  './js/dark-mode.js',
+  './lang/en.json',
+  './lang/es.json',
+  './fontawesome/css/all.min.css',
+  './manifest.json'
 ];
 
 // Assets to cache on demand
 const CACHE_ON_DEMAND = [
-  '/css/modern-gallery.css',
-  '/css/clean-layout.css', 
-  '/css/dark-mode.css',
-  '/js/analytics.js',
-  '/js/background-images.js',
-  '/js/css-loader.js'
+  './css/modern-gallery.css',
+  './css/clean-layout.css',
+  './css/dark-mode.css',
+  './js/analytics.js',
+  './js/background-images.js',
+  './js/css-loader.js'
 ];
 
 // Image assets (cached with different strategy)
@@ -265,20 +265,20 @@ self.addEventListener('push', (event) => {
   const data = event.data.json();
   const options = {
     body: data.body,
-    icon: '/img/icons/icon-192x192.png',
-    badge: '/img/icons/badge-72x72.png',
+    icon: './img/icons/icon-192x192.png',
+    badge: './img/icons/badge-72x72.png',
     vibrate: [200, 100, 200],
     data: data.data,
     actions: [
       {
         action: 'view',
         title: 'View Portfolio',
-        icon: '/img/icons/action-view.png'
+        icon: './img/icons/action-view.png'
       },
       {
         action: 'contact',
         title: 'Get in Touch',
-        icon: '/img/icons/action-contact.png'
+        icon: './img/icons/action-contact.png'
       }
     ]
   };
@@ -293,12 +293,12 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   const action = event.action;
-  let url = '/';
+  let url = './';
 
   if (action === 'view') {
-    url = '/';
+    url = './';
   } else if (action === 'contact') {
-    url = '/contact.html';
+    url = './contact.html';
   } else if (event.notification.data && event.notification.data.url) {
     url = event.notification.data.url;
   }

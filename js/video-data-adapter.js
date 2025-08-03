@@ -6,7 +6,7 @@
 
 class VideoDataAdapter {
     constructor() {
-        this.apiBaseUrl = '/api/videos.php';
+        this.apiBaseUrl = './api/videos.php';
         this.useAPI = true; // Cambiar a false para usar datos estáticos
         this.cache = new Map();
         this.cacheTimeout = 5 * 60 * 1000; // 5 minutos

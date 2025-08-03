@@ -8,5 +8,5 @@
   <rect width="192" height="192" rx="38" fill="url(#grad)"/>
   <circle cx="96" cy="67" r="23" fill="white" opacity="0.9"/>
   <polygon points="80,86 80,125 119,105.5" fill="white" opacity="0.9"/>
-  <text x="96" y="163" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold" opacity="0.8">AR</text>
+  <text x="96" y="163" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold" opacity="0.8">MV</text>
 </svg>

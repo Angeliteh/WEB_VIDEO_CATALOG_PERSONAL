@@ -2,12 +2,12 @@
   "name": "Alex Rodriguez - Professional Videographer",
   "short_name": "Alex Rodriguez",
   "description": "Professional videographer portfolio showcasing wedding films, corporate videos, and creative storytelling projects in Colorado.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "./",
   "lang": "en",
   "dir": "ltr",
   "categories": ["photography", "business", "entertainment"],
@@ -88,7 +88,7 @@
       "name": "View Portfolio",
       "short_name": "Portfolio",
       "description": "Browse video portfolio and recent work",
-      "url": "/",
+      "url": "./",
       "icons": [
         {
           "src": "img/icons/shortcut-portfolio.png",
@@ -100,7 +100,7 @@
       "name": "About Alex",
       "short_name": "About",
       "description": "Learn about Alex Rodriguez and his videography journey",
-      "url": "/about.html",
+      "url": "./about.html",
       "icons": [
         {
           "src": "img/icons/shortcut-about.png", 
@@ -112,7 +112,7 @@
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch for your next video project",
-      "url": "/contact.html",
+      "url": "./contact.html",
       "icons": [
         {
           "src": "img/icons/shortcut-contact.png",
