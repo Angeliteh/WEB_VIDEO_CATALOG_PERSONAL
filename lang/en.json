@@ -168,6 +168,56 @@
     "video5": "Weekend Warriors",
     "video6": "Creative Experiments"
   },
+  "videos": {
+    "cinematic_landscapes": {
+      "title": "Mountain Escape",
+      "description": "A cinematic journey through the Rocky Mountains showcasing the serene beauty of nature."
+    },
+    "urban_timelapse": {
+      "title": "Urban Chronicles",
+      "description": "Dynamic timelapse capturing the pulse of city life in downtown Denver."
+    },
+    "ocean_waves": {
+      "title": "Coastal Dreams",
+      "description": "Romantic wedding film capturing precious moments by the Pacific Coast."
+    },
+    "mountain_adventure": {
+      "title": "Alpine Adventure",
+      "description": "Epic expedition documenting mountain climbing in Colorado's most challenging peaks."
+    },
+    "forest_wildlife": {
+      "title": "Forest Wildlife",
+      "description": "A year-long project documenting wildlife in my local forest preserve."
+    },
+    "sunset_magic": {
+      "title": "Sunset Magic",
+      "description": "My favorite sunset captures from various locations around the world."
+    },
+    "tech_innovation": {
+      "title": "Tech Innovation",
+      "description": "A behind-the-scenes look at my creative workflow and process."
+    },
+    "cultural_heritage": {
+      "title": "Cultural Heritage",
+      "description": "Documenting my grandmother's stories and our family traditions."
+    },
+    "extreme_sports": {
+      "title": "Extreme Sports",
+      "description": "Action footage from my friends' extreme sports adventures."
+    },
+    "wedding_moments": {
+      "title": "Wedding Moments",
+      "description": "Intimate wedding cinematography capturing precious moments."
+    },
+    "startup_story": {
+      "title": "Startup Story",
+      "description": "Following the entrepreneurial journey of a Boulder-based tech startup."
+    },
+    "adventure_hiking": {
+      "title": "Adventure Hiking",
+      "description": "Epic hiking adventures through Colorado's most challenging trails."
+    }
+  },
   "share_modal": {
     "title": "Share Video",
     "social_title": "Share on Social Media",

@@ -88,10 +88,6 @@
 										<!-- Top Info Bar -->
 										<div class="video-info-bar">
 											<h3 class="video-title tm-video-title" data-i18n="videos.cinematic_landscapes.title">Mountain Escape</h3>
-											<div class="video-meta">
-												<span class="video-author">Alex Rodriguez</span>
-												<span class="video-date">January 15, 2024</span>
-											</div>
 										</div>
 
 										<!-- Center Play Button -->
@@ -380,11 +376,20 @@
         }
 
         function getDisplayDescription(video) {
+            // Use i18n system for dynamic translations
+            if (video.description && window.i18n) {
+                const translatedDescription = window.i18n.t(video.description);
+                if (translatedDescription && translatedDescription !== video.description) {
+                    return translatedDescription;
+                }
+            }
+
+            // Fallback to hardcoded descriptions if i18n not available
             const descriptions = {
-                'videos.cinematic_landscapes.description': 'A personal project capturing the serene beauty of my weekend hiking trip to the Rocky Mountains.',
-                'videos.urban_timelapse.description': 'My ongoing documentation of urban life in downtown Denver.',
-                'videos.ocean_waves.description': 'Summer vacation footage from my trip to the Pacific Coast.',
-                'videos.mountain_adventure.description': 'Behind-the-scenes of my mountain climbing expedition.',
+                'videos.cinematic_landscapes.description': 'A cinematic journey through the Rocky Mountains showcasing the serene beauty of nature.',
+                'videos.urban_timelapse.description': 'Dynamic timelapse capturing the pulse of city life in downtown Denver.',
+                'videos.ocean_waves.description': 'Romantic wedding film capturing precious moments by the Pacific Coast.',
+                'videos.mountain_adventure.description': 'Epic expedition documenting mountain climbing in Colorado\'s most challenging peaks.',
                 'videos.forest_wildlife.description': 'A year-long project documenting wildlife in my local forest preserve.',
                 'videos.sunset_magic.description': 'My favorite sunset captures from various locations around the world.',
                 'videos.tech_innovation.description': 'A behind-the-scenes look at my creative workflow and process.',
@@ -758,11 +763,23 @@
                 }
             });
 
-            // Mouse movement for controls
+            // Mouse movement and touch events for controls
             const videoWrapper = document.querySelector('.video-wrapper');
 
             videoWrapper.addEventListener('mousemove', showControls);
             videoWrapper.addEventListener('mouseleave', hideControls);
+
+            // Touch events for mobile
+            videoWrapper.addEventListener('touchstart', showControls);
+            videoWrapper.addEventListener('touchend', function() {
+                // On mobile, keep controls visible longer
+                clearTimeout(hideControlsTimeout);
+                hideControlsTimeout = setTimeout(() => {
+                    if (!video.paused) {
+                        controls.classList.remove('show');
+                    }
+                }, 5000); // 5 seconds on mobile
+            });
 
             // Keyboard controls
             document.addEventListener('keydown', function(e) {
@@ -928,20 +945,28 @@
         }
 
         function getDisplayTitle(video) {
-            // Get display title for messages
+            // Use i18n system for dynamic translations
+            if (video.title && window.i18n) {
+                const translatedTitle = window.i18n.t(video.title);
+                if (translatedTitle && translatedTitle !== video.title) {
+                    return translatedTitle;
+                }
+            }
+
+            // Fallback to hardcoded titles if i18n not available
             const displayTitles = {
                 'videos.cinematic_landscapes.title': 'Mountain Escape',
-                'videos.urban_timelapse.title': 'City Life Chronicles',
-                'videos.ocean_waves.title': 'Coastal Memories',
+                'videos.urban_timelapse.title': 'Urban Chronicles',
+                'videos.ocean_waves.title': 'Coastal Dreams',
                 'videos.mountain_adventure.title': 'Alpine Adventure',
-                'videos.forest_wildlife.title': 'Backyard Wildlife',
-                'videos.sunset_magic.title': 'Golden Hour Collection',
-                'videos.tech_innovation.title': 'Creative Process',
-                'videos.cultural_heritage.title': 'Family Heritage',
-                'videos.extreme_sports.title': 'Weekend Warriors',
-                'videos.wedding_moments.title': 'Wedding Memories',
-                'videos.startup_story.title': 'Startup Journey',
-                'videos.adventure_hiking.title': 'Mountain Adventures'
+                'videos.forest_wildlife.title': 'Forest Wildlife',
+                'videos.sunset_magic.title': 'Sunset Magic',
+                'videos.tech_innovation.title': 'Tech Innovation',
+                'videos.cultural_heritage.title': 'Cultural Heritage',
+                'videos.extreme_sports.title': 'Extreme Sports',
+                'videos.wedding_moments.title': 'Wedding Moments',
+                'videos.startup_story.title': 'Startup Story',
+                'videos.adventure_hiking.title': 'Adventure Hiking'
             };
 
             return displayTitles[video.title] || 'Personal Video';

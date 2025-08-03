@@ -125,10 +125,36 @@ SMART DARK MODE - Only changes colors, preserves background images
 
 /* Ensure navigation is transparent on all pages */
 [data-theme="dark"] .navbar,
-[data-theme="dark"] .navbar-collapse,
 [data-theme="dark"] .tm-site-header {
   background-color: transparent !important;
   background: transparent !important;
+}
+
+/* Mobile menu styling for dark mode */
+@media (max-width: 991px) {
+  [data-theme="dark"] .navbar-collapse {
+    background-color: rgba(20, 20, 20, 0.9) !important; /* Fondo oscuro menos transparente */
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Light mode mobile menu */
+  [data-theme="light"] .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Fondo claro menos transparente */
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15) !important;
+    color: #333 !important;
+  }
+
+  [data-theme="light"] .navbar-collapse .nav-link {
+    color: #333 !important;
+  }
+
+  [data-theme="light"] .navbar-collapse .nav-link:hover {
+    color: #667eea !important;
+  }
 }
 
 /* Navigation links - Light mode */
@@ -402,7 +428,8 @@ SMART DARK MODE - Only changes colors, preserves background images
 .tm-main-video {
   width: 100%;
   height: auto;
-  max-height: 85vh;
+  max-height: 90vh; /* Más alto para mejor espacio */
+  min-height: 400px; /* Altura mínima garantizada */
   border-radius: 10px;
   margin-top: 2rem !important;
   display: block;
@@ -418,8 +445,8 @@ SMART DARK MODE - Only changes colors, preserves background images
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0) 25%,
-    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0) 60%,
     rgba(0, 0, 0, 0.8) 100%
   );
   opacity: 0;
@@ -427,7 +454,7 @@ SMART DARK MODE - Only changes colors, preserves background images
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end; /* Cambiar a flex-end para empujar controles abajo */
   color: white;
   cursor: pointer;
 }
@@ -438,42 +465,40 @@ SMART DARK MODE - Only changes colors, preserves background images
   pointer-events: auto;
 }
 
-/* Video Info Bar */
+/* Video Info Bar - Solo mostrar cuando sea necesario */
 .video-info-bar {
-  padding: 20px 20px 0 20px;
-  align-self: flex-start;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 5;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease;
+}
+
+.custom-video-controls:hover .video-info-bar {
+  opacity: 1; /* Mostrar solo en hover */
 }
 
 .video-title {
   font-size: 1.4rem;
   font-weight: 600;
-  margin: 0 0 8px 0;
+  margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   line-height: 1.2;
+  text-align: center;
 }
 
-.video-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.video-author {
-  font-weight: 500;
-}
-
-.video-date {
-  opacity: 0.8;
-}
+/* Video meta removed for cleaner look */
 
 /* Center Play Button */
 .center-play-button {
   position: absolute;
-  top: 50%;
+  top: 40%; /* Más arriba para no interferir con controles */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  pointer-events: auto;
 }
 
 .big-play-btn {
@@ -505,15 +530,19 @@ SMART DARK MODE - Only changes colors, preserves background images
 
 /* Controls Bar */
 .controls-bar {
-  padding: 0 20px 20px 20px;
-  align-self: flex-end;
+  padding: 0 20px 30px 20px; /* Más padding bottom */
   width: 100%;
+  position: relative;
+  z-index: 15; /* Por encima del botón de play */
+  margin-top: auto; /* Empujar hacia abajo */
 }
 
 /* Progress Bar */
 .progress-container {
-  margin-bottom: 12px;
+  margin-bottom: 20px; /* Más separación */
   cursor: pointer;
+  position: relative;
+  z-index: 20; /* Por encima de todo */
 }
 
 .progress-bar {
@@ -690,31 +719,44 @@ SMART DARK MODE - Only changes colors, preserves background images
     font-size: 1.1rem;
   }
 
-  .video-meta {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 0.8rem;
-  }
-
   .big-play-btn {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
   }
 
+  /* Ajustar botón de play en móvil */
+  .center-play-button {
+    top: 35%; /* Más arriba para dar espacio a controles */
+    z-index: 10;
+  }
+
+  /* Asegurar que el video wrapper tenga suficiente espacio */
+  .video-wrapper {
+    position: relative;
+    min-height: 350px; /* Más altura mínima */
+  }
+
   .controls-bar {
-    padding: 0 15px 15px 15px;
+    padding: 0 15px 50px 15px; /* Aún más padding bottom */
+    margin-top: 60px; /* Espacio desde el botón de play */
   }
 
   .controls-row {
     flex-direction: column;
-    gap: 12px;
+    gap: 18px; /* Más espacio entre filas */
     align-items: stretch;
   }
 
-  .controls-left,
-  .controls-right {
+  .controls-left {
     justify-content: space-between;
+    align-items: center;
+  }
+
+  .controls-right {
+    justify-content: center;
+    gap: 25px; /* Más espacio entre botones */
+    align-items: center;
   }
 
   .volume-slider {
@@ -723,31 +765,76 @@ SMART DARK MODE - Only changes colors, preserves background images
   }
 
   .control-btn {
-    padding: 10px;
-    font-size: 1.1rem;
+    padding: 14px 18px; /* Botones más grandes para touch */
+    font-size: 1.3rem;
+    min-width: 52px; /* Ancho mínimo */
+    min-height: 48px; /* Altura mínima para touch */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .control-btn:hover,
+  .control-btn:active {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
   }
 
   .time-display {
-    font-size: 0.8rem;
-    min-width: 70px;
+    font-size: 0.9rem;
+    min-width: 85px;
+    text-align: center;
+  }
+
+  /* Texto de velocidad más visible en móvil */
+  .speed-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-left: 4px;
   }
 
   .tm-main-video {
-    max-height: 60vh;
+    max-height: 75vh; /* Mucho más alto en móvil */
+    min-height: 350px; /* Altura mínima garantizada */
   }
 
   .video-player-container {
     max-width: 98%;
+    margin-bottom: 4rem; /* Más espacio abajo */
   }
 
   .progress-bar {
-    height: 6px;
+    height: 8px; /* Más alto para mejor touch */
+    margin-bottom: 25px; /* Mucho más espacio */
   }
 
   .progress-handle {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     opacity: 1;
+  }
+
+  /* Ajustar contenedor de progreso en móvil */
+  .progress-container {
+    margin-bottom: 25px; /* Más separación en móvil */
+    z-index: 25; /* Por encima de todo */
+  }
+
+  /* Asegurar que los controles no se corten en móvil */
+  .custom-video-controls {
+    padding-bottom: 25px; /* Más padding extra */
+    min-height: 100%; /* Asegurar altura completa */
+  }
+
+  /* Mejorar el overlay en móvil */
+  .custom-video-controls.show {
+    opacity: 1 !important;
+  }
+
+  /* Asegurar que el wrapper tenga suficiente altura */
+  .video-wrapper {
+    min-height: 350px; /* Altura mínima garantizada */
   }
 }
 

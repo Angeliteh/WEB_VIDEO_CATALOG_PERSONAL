@@ -189,6 +189,56 @@
     "video5": "Guerreros de Fin de Semana",
     "video6": "Experimentos Creativos"
   },
+  "videos": {
+    "cinematic_landscapes": {
+      "title": "Escape a la Montaña",
+      "description": "Un viaje cinematográfico a través de las Montañas Rocosas mostrando la belleza serena de la naturaleza."
+    },
+    "urban_timelapse": {
+      "title": "Crónicas Urbanas",
+      "description": "Timelapse dinámico capturando el pulso de la vida urbana en el centro de Denver."
+    },
+    "ocean_waves": {
+      "title": "Sueños Costeros",
+      "description": "Película romántica de boda capturando momentos preciosos junto a la Costa del Pacífico."
+    },
+    "mountain_adventure": {
+      "title": "Aventura Alpina",
+      "description": "Expedición épica documentando la escalada en las montañas más desafiantes de Colorado."
+    },
+    "forest_wildlife": {
+      "title": "Vida Silvestre del Bosque",
+      "description": "Proyecto de un año documentando la vida silvestre en mi reserva forestal local."
+    },
+    "sunset_magic": {
+      "title": "Magia del Atardecer",
+      "description": "Mis capturas favoritas de atardeceres de varios lugares alrededor del mundo."
+    },
+    "tech_innovation": {
+      "title": "Innovación Tecnológica",
+      "description": "Una mirada detrás de escenas de mi flujo de trabajo creativo y proceso."
+    },
+    "cultural_heritage": {
+      "title": "Herencia Cultural",
+      "description": "Documentando las historias de mi abuela y nuestras tradiciones familiares."
+    },
+    "extreme_sports": {
+      "title": "Deportes Extremos",
+      "description": "Metraje de acción de las aventuras de deportes extremos de mis amigos."
+    },
+    "wedding_moments": {
+      "title": "Momentos de Boda",
+      "description": "Cinematografía íntima de bodas capturando momentos preciosos."
+    },
+    "startup_story": {
+      "title": "Historia de Startup",
+      "description": "Siguiendo el viaje empresarial de una startup tecnológica con base en Boulder."
+    },
+    "adventure_hiking": {
+      "title": "Senderismo de Aventura",
+      "description": "Aventuras épicas de senderismo a través de los senderos más desafiantes de Colorado."
+    }
+  },
   "share_modal": {
     "title": "Compartir Video",
     "social_title": "Compartir en Redes Sociales",

@@ -494,13 +494,57 @@ video {
     }
     
     .navbar-collapse {
-        background-color: rgba(0,0,0,0.5);
-        border-radius: 5px;
+        background-color: rgba(0,0,0,0.85); /* Menos transparente para mejor visibilidad */
+        backdrop-filter: blur(10px); /* Efecto blur para modernidad */
+        border-radius: 8px;
         border-top-right-radius: 0;
-        padding: 10px 15px;
+        padding: 15px 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Sombra sutil */
+        border: 1px solid rgba(255,255,255,0.1); /* Borde sutil */
+        transition: all 0.3s ease; /* Animación suave */
+        transform-origin: top right; /* Origen de animación */
     }
 
-    .nav-item { margin-bottom: 10px; }
+    .navbar-collapse.show {
+        animation: slideInFromTop 0.3s ease-out;
+    }
+
+    /* Animación para el menú móvil */
+    @keyframes slideInFromTop {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px) scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .nav-item {
+        margin-bottom: 12px;
+    }
+
+    /* Mejorar visibilidad de enlaces en menú móvil */
+    .navbar-collapse .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        padding: 8px 12px !important;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+
+    .navbar-collapse .nav-link:hover,
+    .navbar-collapse .nav-link:focus {
+        color: #fff !important;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+    }
+
+    .navbar-collapse .nav-link.active {
+        color: #4dabf7 !important;
+        background-color: rgba(77, 171, 247, 0.1);
+    }
 
     .navbar-toggler {
         border-bottom-left-radius: 0;
