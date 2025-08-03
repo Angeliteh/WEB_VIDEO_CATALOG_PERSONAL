@@ -1,0 +1,45 @@
+# GitHub Pages configuration for MediaVault Pro
+title: "MediaVault Pro - Alex Rodriguez Videographer"
+description: "Professional video portfolio and personal media library"
+
+# Disable Jekyll processing
+plugins: []
+markdown: kramdown
+highlighter: rouge
+
+# Include all files (including those starting with .)
+include:
+  - .nojekyll
+  - manifest.json
+  - sw.js
+  - favicon.svg
+  - robots.txt
+  - sitemap.xml
+
+# Exclude unnecessary files
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .git/
+  - node_modules/
+  - package*.json
+
+# MIME types for GitHub Pages
+plugins:
+  - jekyll-sitemap
+
+# Ensure proper MIME types
+defaults:
+  - scope:
+      path: "manifest.json"
+    values:
+      layout: null
+  - scope:
+      path: "sw.js"
+    values:
+      layout: null
+  - scope:
+      path: "*.svg"
+    values:
+      layout: null
